@@ -6,6 +6,7 @@
     <title>BeetBOOST - Revolutionary Dairy-Free Beetroot Yogurt</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
+        /* ...existing styles... */
         * {
             margin: 0;
             padding: 0;
@@ -30,7 +31,6 @@
             overflow-x: hidden;
         }
 
-        /* Header Navigation */
         .navbar {
             position: fixed;
             top: 0;
@@ -91,7 +91,6 @@
             transform: translateY(-2px);
         }
 
-        /* Hero Section */
         .hero {
             height: 100vh;
             background: linear-gradient(135deg, var(--earthy-cream) 0%, var(--soft-rose) 100%);
@@ -170,7 +169,6 @@
             border-radius: 20px;
         }
 
-        /* Product Section */
         .product-section {
             padding: 6rem 0;
             background: var(--pure-white);
@@ -225,7 +223,6 @@
             font-weight: 700;
         }
 
-        /* Coming Soon Card */
         .product-card.coming-soon {
             opacity: 0.8;
             background: repeating-linear-gradient(
@@ -247,7 +244,50 @@
             background: linear-gradient(135deg, var(--soft-rose), var(--primary-burgundy));
         }
 
-        /* Benefits Section */
+        /* Nutritional Table */
+        .nutrition-section {
+            background: var(--soft-rose);
+            padding: 4rem 0 4rem 0;
+        }
+        .nutrition-table-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--pure-white);
+            border-radius: 18px;
+            box-shadow: 0 6px 24px rgba(139, 21, 56, 0.08);
+            padding: 2rem 2rem 1rem 2rem;
+        }
+        .nutrition-title {
+            text-align: center;
+            color: var(--primary-burgundy);
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+        .nutrition-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1rem;
+        }
+        .nutrition-table th, .nutrition-table td {
+            padding: 0.7rem 0.5rem;
+            text-align: left;
+        }
+        .nutrition-table th {
+            color: var(--vibrant-magenta);
+            font-weight: 600;
+            border-bottom: 2px solid var(--soft-rose);
+        }
+        .nutrition-table tr:not(:last-child) td {
+            border-bottom: 1px solid #f0e6ea;
+        }
+        .nutrition-footnote {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-top: 0.5rem;
+            text-align: center;
+        }
+
         .benefits-section {
             padding: 6rem 0;
             background: linear-gradient(135deg, var(--soft-rose) 0%, var(--earthy-cream) 100%);
@@ -281,7 +321,27 @@
             font-size: 1.5rem;
         }
 
-        /* Testimonials Section */
+        .complete-amino-section {
+            background: var(--pure-white);
+            margin: 3rem auto 0 auto;
+            border-radius: 15px;
+            max-width: 900px;
+            box-shadow: 0 5px 20px rgba(139, 21, 56, 0.09);
+            padding: 2.5rem 2rem;
+        }
+        .complete-amino-title {
+            color: var(--primary-burgundy);
+            font-size: 1.7rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .complete-amino-desc {
+            color: var(--text-dark);
+            font-size: 1.1rem;
+            text-align: center;
+        }
+
         .testimonials-section {
             padding: 6rem 0;
             background: var(--pure-white);
@@ -312,7 +372,6 @@
             color: var(--vibrant-magenta);
         }
 
-        /* Footer */
         .footer {
             background: var(--primary-burgundy);
             color: white;
@@ -350,7 +409,6 @@
             opacity: 0.8;
         }
 
-        /* Mobile Responsiveness */
         @media (max-width: 768px) {
             .hero-container {
                 grid-template-columns: 1fr;
@@ -368,14 +426,15 @@
             .product-grid {
                 grid-template-columns: 1fr;
             }
+            .nutrition-table-container, .complete-amino-section {
+                padding: 1rem 0.5rem;
+            }
         }
 
-        /* Smooth Scrolling */
         html {
             scroll-behavior: smooth;
         }
 
-        /* Animations */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -453,6 +512,96 @@
         </div>
     </section>
 
+    <!-- Nutrition Information Section -->
+    <section class="nutrition-section" id="nutrition">
+        <div class="nutrition-table-container">
+            <div class="nutrition-title">Nutritional Information</div>
+            <table class="nutrition-table">
+                <tr>
+                    <th>Nutrient</th>
+                    <th>Per 100g</th>
+                    <th>Per Serve (200g)</th>
+                </tr>
+                <tr>
+                    <td>Energy</td>
+                    <td>604 kJ</td>
+                    <td>1207 kJ</td>
+                </tr>
+                <tr>
+                    <td>Protein</td>
+                    <td>7.4 g</td>
+                    <td>14.9 g</td>
+                </tr>
+                <tr>
+                    <td>Fat, total</td>
+                    <td>8.5 g</td>
+                    <td>17.0 g</td>
+                </tr>
+                <tr>
+                    <td>- Saturated</td>
+                    <td>7.6 g</td>
+                    <td>15.3 g</td>
+                </tr>
+                <tr>
+                    <td>Carbohydrate</td>
+                    <td>12.4 g</td>
+                    <td>24.7 g</td>
+                </tr>
+                <tr>
+                    <td>- Sugars</td>
+                    <td>9.3 g</td>
+                    <td>18.6 g</td>
+                </tr>
+                <tr>
+                    <td>Dietary Fibre</td>
+                    <td>–</td>
+                    <td>–</td>
+                </tr>
+                <tr>
+                    <td>Sodium</td>
+                    <td>122 mg</td>
+                    <td>244 mg</td>
+                </tr>
+                <tr>
+                    <td>Leucine (BCAA)</td>
+                    <td>852 mg</td>
+                    <td>1704 mg</td>
+                </tr>
+                <tr>
+                    <td>Isoleucine (BCAA)</td>
+                    <td>534 mg</td>
+                    <td>1068 mg</td>
+                </tr>
+                <tr>
+                    <td>Valine (BCAA)</td>
+                    <td>515 mg</td>
+                    <td>1030 mg</td>
+                </tr>
+                <tr>
+                    <td>Threonine</td>
+                    <td>838 mg</td>
+                    <td>1676 mg</td>
+                </tr>
+                <tr>
+                    <td>Arginine</td>
+                    <td>–</td>
+                    <td>–</td>
+                </tr>
+                <tr>
+                    <td>Total BCAA</td>
+                    <td>1901 mg</td>
+                    <td>3802 mg</td>
+                </tr>
+            </table>
+            <div class="nutrition-footnote">
+                <strong>Ingredients:</strong> Coconut yoghurt (76.7%) [Water, organic coconut cream, tapioca starch, cane sugar, live cultures (L.casei, L.acidophilus, L.bulgaricus, S.thermophilus, Bifidobacterium)], Beetroot (6.9%), Beetroot powder (2.7%), Tapioca starch (2.7%), Vitamin B1.<br>
+                <strong>Allergens:</strong> Contains soy. May contain tree nuts (coconut).<br>
+                <strong>Storage:</strong> Keep refrigerated at 4°C or below. Consume within 5 days after opening.<br>
+                <strong>Made in Australia</strong> from local and imported ingredients.
+            </div>
+        </div>
+    </section>
+
     <!-- Benefits Section -->
     <section id="benefits" class="benefits-section">
         <div class="container">
@@ -461,7 +610,7 @@
                 <div class="benefit-item">
                     <div class="benefit-icon">❤️</div>
                     <h3>Heart Health</h3>
-                    <p>Beetroot naturally contains nitrates that support cardiovascular health and blood pressure regulation.</p>
+                    <p>Beetroot naturally contains nitrates that support cardiovascular health and blood pressure regulation.<br><span style="color:var(--soft-rose);font-size:0.95em;">Rich in folate, manganese, and copper for optimal heart function.</span></p>
                 </div>
                 <div class="benefit-item">
                     <div class="benefit-icon">💪</div>
@@ -487,6 +636,16 @@
                     <div class="benefit-icon">⚡</div>
                     <h3>Natural Energy</h3>
                     <p>Sustained energy release without artificial stimulants or processed sugars.</p>
+                </div>
+            </div>
+            <!-- Complete Amino Acid Profile Section -->
+            <div class="complete-amino-section">
+                <div class="complete-amino-title">Complete Amino Acid Profile</div>
+                <div class="complete-amino-desc">
+                    BeetBOOST is formulated with a premium soy protein blend that delivers all 9 essential amino acids, including 1.9g of BCAAs (leucine, isoleucine, valine) per 100g, supporting muscle recovery and growth.<br><br>
+                    Unlike most plant-based yogurts, BeetBOOST provides a complete protein profile comparable to dairy, but without lactose or animal products. This makes it a perfect protein source for vegans and anyone seeking clean, plant-based nutrition.<br><br>
+                    Complete plant proteins not only help build and repair muscle, but also support immune health and overall wellness, making BeetBOOST an ideal choice for active lifestyles and balanced diets.<br>
+                    <span style="color:var(--soft-rose);font-size:0.97em;"><strong>Enjoy BeetBOOST as a protein-rich snack, post-workout recovery, or anytime your body craves quality plant protein!</strong></span>
                 </div>
             </div>
         </div>
