@@ -1,4 +1,3 @@
-<!-- Restored index.html with Benefits Section (from paste-2) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -582,6 +581,8 @@
     <!-- Nutrition Information Section -->
     <section class="nutrition-section" id="nutrition">
         <div class="nutrition-table-container">
+            <div class="nutrition-header-flex">
+            <span class="nutrition-title">Nutritional Information</span>
             <img src="Made in AU.PNG" alt="Made in Australia from at least 47% Australian ingredients" class="made-in-au-badge">
             <div class="nutrition-title">Nutritional Information</div>
             <table class="nutrition-table">
@@ -669,6 +670,35 @@
             </div>
         </div>
     </section>
+    <style>
+.nutrition-header-flex {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+.nutrition-title {
+    color: var(--primary-burgundy);
+    font-size: 2rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+.made-in-au-badge-inline {
+    height: 48px;
+    width: auto;
+    display: block;
+}
+@media (max-width: 600px) {
+    .nutrition-header-flex {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.7rem;
+    }
+    .made-in-au-badge-inline {
+        height: 38px;
+    }
+}
+</style>
 
     <!-- Benefits Section -->
     <section id="benefits" class="benefits-section">
