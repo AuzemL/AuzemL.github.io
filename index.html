@@ -308,6 +308,14 @@
             box-shadow: 0 5px 20px rgba(139, 21, 56, 0.1);
         }
 
+        .benefit-icon-link {
+            display: inline-block;
+            text-decoration: none;
+        }
+        .benefit-icon-link:focus {
+            outline: 2px solid var(--vibrant-magenta);
+            outline-offset: 2px;
+        }
         .benefit-icon {
             width: 60px;
             height: 60px;
@@ -319,6 +327,18 @@
             justify-content: center;
             color: white;
             font-size: 1.5rem;
+            transition: box-shadow 0.2s;
+        }
+        .benefit-icon-link:hover .benefit-icon {
+            box-shadow: 0 0 0 4px var(--soft-rose);
+        }
+        .benefit-icon-link .external-icon {
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 4px;
+            width: 17px;
+            height: 17px;
+            fill: var(--soft-rose);
         }
 
         .complete-amino-section {
@@ -578,7 +598,13 @@
             <h2 class="section-title">Why Choose BeetBOOST?</h2>
             <div class="benefits-grid">
                 <div class="benefit-item">
-                    <div class="benefit-icon">❤️</div>
+                    <a class="benefit-icon-link" href="https://link.springer.com/article/10.1007/s40279-014-0149-y" target="_blank" rel="noopener noreferrer" title="Read scientific study on beetroot and exercise performance">
+                        <span class="benefit-icon">❤️
+                            <svg class="external-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+                                <path d="M14.243 2.343a1 1 0 011.414 0l2 2a1 1 0 010 1.414l-8.5 8.5a1 1 0 01-.497.263l-4 1a1 1 0 01-1.213-1.213l1-4a1 1 0 01.263-.497l8.5-8.5zM15.657 4L5 14.657V17h2.343L17 6.343 15.657 4z"/>
+                            </svg>
+                        </span>
+                    </a>
                     <h3>Heart Health</h3>
                     <p>Beetroot naturally contains nitrates that support cardiovascular health and blood pressure regulation.<br><span style="color:var(--soft-rose);font-size:0.95em;">Rich in folate, manganese, and copper for optimal heart function.</span></p>
                 </div>
