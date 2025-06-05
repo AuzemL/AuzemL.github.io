@@ -103,6 +103,7 @@
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: center;
+            position: relative;
         }
 
         .hero-content h1 {
@@ -157,24 +158,35 @@
             box-shadow: 0 10px 30px rgba(139, 21, 56, 0.3);
         }
 
+        /* Hero Image Circle and Beetroot Character */
         .hero-image {
             position: relative;
+            width: 400px;
             height: 500px;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><circle cx="200" cy="200" r="180" fill="%23C41E3A" opacity="0.1"/><circle cx="200" cy="200" r="120" fill="%238B1538" opacity="0.2"/><circle cx="200" cy="200" r="60" fill="%234A7C59" opacity="0.3"/></svg>') center/contain no-repeat;
-            border-radius: 20px;
-        }
-
-        /* Cute beetroot character styles */
-        .beetroot-character-wrapper {
+            margin: 0 auto;
             display: flex;
-            justify-content: center;
             align-items: center;
-            margin: 3rem 0 2.5rem 0;
+            justify-content: center;
         }
-        .beetroot-character {
-            width: 140px;
-            height: 170px;
+        .hero-circle-bg {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            width: 360px;
+            height: 360px;
+            z-index: 1;
+        }
+        .beetroot-character-hero {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-60%);
+            width: 170px;
+            height: 210px;
+            z-index: 2;
             display: block;
+            pointer-events: none;
         }
 
         .product-section {
@@ -420,6 +432,21 @@
             opacity: 0.9;
         }
 
+        @media (max-width: 900px) {
+            .hero-image {
+                width: 100vw;
+                max-width: 400px;
+                min-width: 250px;
+            }
+            .hero-circle-bg {
+                width: 250px;
+                height: 250px;
+            }
+            .beetroot-character-hero {
+                width: 110px;
+                height: 140px;
+            }
+        }
         @media (max-width: 768px) {
             .hero-container {
                 grid-template-columns: 1fr;
@@ -478,42 +505,34 @@
                     <a href="#benefits" class="btn-secondary">Learn Benefits</a>
                 </div>
             </div>
-            <div class="hero-image animated"></div>
+            <div class="hero-image animated">
+                <!-- Circle background -->
+                <svg class="hero-circle-bg" viewBox="0 0 400 400">
+                    <circle cx="200" cy="200" r="180" fill="#C41E3A" opacity="0.10"/>
+                    <circle cx="200" cy="200" r="120" fill="#8B1538" opacity="0.20"/>
+                    <circle cx="200" cy="200" r="60" fill="#4A7C59" opacity="0.30"/>
+                </svg>
+                <!-- Cute beetroot character centered in the circle -->
+                <svg class="beetroot-character-hero" viewBox="0 0 140 170" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Cute Beetroot Character">
+                    <ellipse cx="70" cy="100" rx="48" ry="60" fill="#C41E3A" stroke="#8B1538" stroke-width="4"/>
+                    <ellipse cx="70" cy="120" rx="22" ry="18" fill="#fff" opacity="0.15"/>
+                    <path d="M60 122 Q70 130 80 122" stroke="#8B1538" stroke-width="3" fill="none" stroke-linecap="round"/>
+                    <ellipse cx="58" cy="115" rx="4" ry="6" fill="#2C2C2C"/>
+                    <ellipse cx="82" cy="115" rx="4" ry="6" fill="#2C2C2C"/>
+                    <ellipse cx="52" cy="125" rx="4" ry="2" fill="#E8B4CB"/>
+                    <ellipse cx="88" cy="125" rx="4" ry="2" fill="#E8B4CB"/>
+                    <path d="M70 45 Q60 25 80 15 Q90 10 85 30 Q80 50 70 45 Z" fill="#4A7C59" stroke="#38804A" stroke-width="2"/>
+                    <path d="M70 45 Q90 25 110 30 Q120 35 105 50 Q90 65 70 45 Z" fill="#6FCF97" stroke="#38804A" stroke-width="2"/>
+                    <path d="M70 45 Q50 25 30 40 Q20 50 45 60 Q65 70 70 45 Z" fill="#4A7C59" stroke="#38804A" stroke-width="2"/>
+                    <path d="M22 130 Q10 140 30 150" stroke="#8B1538" stroke-width="4" fill="none" stroke-linecap="round"/>
+                    <path d="M118 130 Q130 140 110 150" stroke="#8B1538" stroke-width="4" fill="none" stroke-linecap="round"/>
+                    <ellipse cx="28" cy="152" rx="5" ry="3" fill="#C41E3A"/>
+                    <ellipse cx="112" cy="152" rx="5" ry="3" fill="#C41E3A"/>
+                    <ellipse cx="85" cy="90" rx="9" ry="18" fill="#fff" opacity="0.13"/>
+                </svg>
+            </div>
         </div>
     </section>
-
-    <!-- Cute Beetroot Character in the middle of the page -->
-    <div class="beetroot-character-wrapper">
-        <!-- SVG: Cute Beetroot Character -->
-        <svg class="beetroot-character" viewBox="0 0 140 170" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Cute Beetroot Character">
-            <!-- Beetroot body -->
-            <ellipse cx="70" cy="100" rx="48" ry="60" fill="#C41E3A" stroke="#8B1538" stroke-width="4"/>
-            <!-- Beetroot face -->
-            <ellipse cx="70" cy="120" rx="22" ry="18" fill="#fff" opacity="0.15"/>
-            <!-- Smile -->
-            <path d="M60 122 Q70 130 80 122" stroke="#8B1538" stroke-width="3" fill="none" stroke-linecap="round"/>
-            <!-- Eyes -->
-            <ellipse cx="58" cy="115" rx="4" ry="6" fill="#2C2C2C"/>
-            <ellipse cx="82" cy="115" rx="4" ry="6" fill="#2C2C2C"/>
-            <!-- Cheeks -->
-            <ellipse cx="52" cy="125" rx="4" ry="2" fill="#E8B4CB"/>
-            <ellipse cx="88" cy="125" rx="4" ry="2" fill="#E8B4CB"/>
-            <!-- Leaf 1 -->
-            <path d="M70 45 Q60 25 80 15 Q90 10 85 30 Q80 50 70 45 Z" fill="#4A7C59" stroke="#38804A" stroke-width="2"/>
-            <!-- Leaf 2 -->
-            <path d="M70 45 Q90 25 110 30 Q120 35 105 50 Q90 65 70 45 Z" fill="#6FCF97" stroke="#38804A" stroke-width="2"/>
-            <!-- Leaf 3 -->
-            <path d="M70 45 Q50 25 30 40 Q20 50 45 60 Q65 70 70 45 Z" fill="#4A7C59" stroke="#38804A" stroke-width="2"/>
-            <!-- Arms -->
-            <path d="M22 130 Q10 140 30 150" stroke="#8B1538" stroke-width="4" fill="none" stroke-linecap="round"/>
-            <path d="M118 130 Q130 140 110 150" stroke="#8B1538" stroke-width="4" fill="none" stroke-linecap="round"/>
-            <!-- Hands -->
-            <ellipse cx="28" cy="152" rx="5" ry="3" fill="#C41E3A"/>
-            <ellipse cx="112" cy="152" rx="5" ry="3" fill="#C41E3A"/>
-            <!-- Shine on beetroot -->
-            <ellipse cx="85" cy="90" rx="9" ry="18" fill="#fff" opacity="0.13"/>
-        </svg>
-    </div>
 
     <!-- Products Section -->
     <section id="products" class="product-section">
