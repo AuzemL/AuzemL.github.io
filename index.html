@@ -203,6 +203,7 @@
             text-align: center;
             transition: transform 0.3s ease;
             border: 2px solid transparent;
+            position: relative;
         }
 
         .product-card:hover {
@@ -222,6 +223,28 @@
             color: white;
             font-size: 3rem;
             font-weight: 700;
+        }
+
+        /* Coming Soon Card */
+        .product-card.coming-soon {
+            opacity: 0.8;
+            background: repeating-linear-gradient(
+                135deg,
+                var(--earthy-cream),
+                var(--earthy-cream) 20px,
+                #e2d5db 20px,
+                #e2d5db 40px
+            );
+            border-style: dashed;
+            border-color: var(--soft-rose);
+            cursor: not-allowed;
+        }
+        .product-card.coming-soon .btn-primary,
+        .product-card.coming-soon .btn-primary:disabled {
+            opacity: 0.6;
+            pointer-events: none;
+            cursor: not-allowed;
+            background: linear-gradient(135deg, var(--soft-rose), var(--primary-burgundy));
         }
 
         /* Benefits Section */
@@ -405,23 +428,26 @@
         <div class="container">
             <h2 class="section-title">Our BeetBOOST Range</h2>
             <div class="product-grid">
+                <!-- Original BeetBOOST -->
                 <div class="product-card">
                     <div class="product-image">🥤</div>
                     <h3>Original BeetBOOST</h3>
                     <p>Pure beetroot yogurt with a smooth, creamy texture and natural sweetness. Perfect for breakfast or post-workout nutrition.</p>
                     <a href="#" class="btn-primary">Shop Now</a>
                 </div>
+                <!-- Chunky BeetBOOST -->
                 <div class="product-card">
-                    <div class="product-image">🌿</div>
-                    <h3>BeetBOOST Natural</h3>
-                    <p>Our signature beetroot yogurt in its purest form, showcasing the natural earthy sweetness and vibrant color of premium beetroot.</p>
+                    <div class="product-image">🥄</div>
+                    <h3>Chunky BeetBOOST</h3>
+                    <p>Our original BeetBOOST formula enhanced with real chunks of beetroot for added texture and concentrated nutrition. Experience the authentic beetroot taste with every satisfying bite.</p>
                     <a href="#" class="btn-primary">Shop Now</a>
                 </div>
-                <div class="product-card">
-                    <div class="product-image">🥥</div>
-                    <h3>Tropical Twist</h3>
-                    <p>Exotic coconut and mango flavors elevate the earthy beetroot taste for a tropical yogurt experience.</p>
-                    <a href="#" class="btn-primary">Shop Now</a>
+                <!-- Coming Soon -->
+                <div class="product-card coming-soon">
+                    <div class="product-image">🔜</div>
+                    <h3>Coming Soon</h3>
+                    <p>Exciting new BeetBOOST flavors are in development! Stay tuned for the next delicious addition to our range.</p>
+                    <button class="btn-primary" disabled>Notify Me</button>
                 </div>
             </div>
         </div>
