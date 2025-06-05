@@ -342,36 +342,6 @@
             text-align: center;
         }
 
-        .testimonials-section {
-            padding: 6rem 0;
-            background: var(--pure-white);
-        }
-
-        .testimonial-carousel {
-            max-width: 800px;
-            margin: 3rem auto 0;
-            text-align: center;
-        }
-
-        .testimonial {
-            background: var(--earthy-cream);
-            padding: 3rem;
-            border-radius: 20px;
-            margin-bottom: 2rem;
-        }
-
-        .testimonial-text {
-            font-size: 1.2rem;
-            font-style: italic;
-            color: var(--text-dark);
-            margin-bottom: 1rem;
-        }
-
-        .testimonial-author {
-            font-weight: 600;
-            color: var(--vibrant-magenta);
-        }
-
         .footer {
             background: var(--primary-burgundy);
             color: white;
@@ -460,9 +430,8 @@
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#products" class="nav-link">Products</a></li>
                 <li><a href="#benefits" class="nav-link">Benefits</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
                 <li><a href="Review.html" class="nav-link">Reviews</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
             <a href="#order" class="cta-button">Order Now</a>
         </div>
@@ -652,23 +621,6 @@
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials-section">
-        <div class="container">
-            <h2 class="section-title">What Our Customers Say</h2>
-            <div class="testimonial-carousel">
-                <div class="testimonial">
-                    <p class="testimonial-text">"BeetBOOST has completely transformed my morning routine. The energy boost is incredible, and I love knowing I'm getting so many nutrients in one delicious serving!"</p>
-                    <p class="testimonial-author">- Sarah M., Nutritionist</p>
-                </div>
-                <div class="testimonial">
-                    <p class="testimonial-text">"As someone with lactose intolerance, finding a creamy, satisfying yogurt has been challenging. BeetBOOST delivers on taste and texture while being completely dairy-free."</p>
-                    <p class="testimonial-author">- Mike T., Fitness Enthusiast</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -742,7 +694,7 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.product-card, .benefit-item, .testimonial').forEach(el => {
+        document.querySelectorAll('.product-card, .benefit-item').forEach(el => {
             observer.observe(el);
         });
     </script>
