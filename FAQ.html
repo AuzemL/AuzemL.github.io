@@ -1,0 +1,151 @@
+<!-- FAQ.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - BeetBOOST</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #F5F2E8 0%, #E8B4CB 100%);
+            color: #2C2C2C;
+            margin: 0;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2.5rem 1rem;
+        }
+        h1 {
+            color: #8B1538;
+            text-align: center;
+            font-size: 2.3rem;
+            margin-bottom: 2.5rem;
+        }
+        .faq-list {
+            margin: 0 auto;
+            max-width: 700px;
+        }
+        .faq-item {
+            background: #fff;
+            border-radius: 12px;
+            margin-bottom: 1.1rem;
+            box-shadow: 0 2px 10px #c41e3a14;
+            overflow: hidden;
+        }
+        .faq-question {
+            cursor: pointer;
+            padding: 1.2rem 1.4rem;
+            font-size: 1.09rem;
+            font-weight: 600;
+            color: #8B1538;
+            background: #F5F2E8;
+            border: none;
+            outline: none;
+            width: 100%;
+            text-align: left;
+            transition: background 0.2s;
+        }
+        .faq-question:hover {
+            background: #E8B4CB;
+        }
+        .faq-answer {
+            display: none;
+            padding: 1.1rem 1.4rem;
+            font-size: 1.05rem;
+            color: #2C2C2C;
+            background: #fff;
+            border-top: 1px solid #e8b4cb;
+        }
+        .faq-item.active .faq-answer {
+            display: block;
+            animation: fadeIn 0.3s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 2.5rem;
+            color: #8B1538;
+            background: #E8B4CB;
+            padding: 0.6em 1.3em;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        .back-link:hover {
+            background: #c41e3a;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Frequently Asked Questions</h1>
+        <div class="faq-list" id="faqList">
+            <div class="faq-item">
+                <button class="faq-question">Is BeetBOOST suitable for vegans?</button>
+                <div class="faq-answer">Yes, BeetBOOST is 100% plant-based and contains no animal-derived ingredients, making it perfect for vegans.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Does BeetBOOST contain any dairy or lactose?</button>
+                <div class="faq-answer">No, BeetBOOST is completely dairy-free and lactose-free. It is made with coconut yogurt and beetroot.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Where is BeetBOOST produced?</button>
+                <div class="faq-answer">BeetBOOST is proudly made in Australia from local and imported ingredients.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">What are the main health benefits of BeetBOOST?</button>
+                <div class="faq-answer">BeetBOOST is rich in plant protein, contains probiotics for gut health, is high in antioxidants, and supports natural energy and heart health.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Is BeetBOOST gluten-free?</button>
+                <div class="faq-answer">Yes, BeetBOOST is gluten-free and suitable for people with gluten intolerance or celiac disease.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">How should I store BeetBOOST?</button>
+                <div class="faq-answer">Keep BeetBOOST refrigerated at 4°C or below and consume within 5 days after opening.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Does BeetBOOST contain added sugars?</button>
+                <div class="faq-answer">BeetBOOST contains a small amount of cane sugar for taste, but no artificial sweeteners or high fructose corn syrup.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Can children eat BeetBOOST?</button>
+                <div class="faq-answer">Absolutely! BeetBOOST is a healthy, nutritious snack for kids and adults alike.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">What is the shelf life of BeetBOOST?</button>
+                <div class="faq-answer">Please refer to the best before date on the packaging. Once opened, consume within 5 days.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">How can I contact customer support?</button>
+                <div class="faq-answer">You can reach us via the <a href="support.html" style="color:#C41E3A;text-decoration:underline;">Contact Support</a> page.</div>
+            </div>
+        </div>
+        <a class="back-link" href="index.html">&larr; Back to Home</a>
+    </div>
+    <script>
+        // FAQ toggle logic
+        document.querySelectorAll('.faq-question').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                const item = btn.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+        // Collapse on answer click
+        document.querySelectorAll('.faq-answer').forEach(function(ans) {
+            ans.addEventListener('click', function() {
+                ans.parentElement.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
