@@ -23,7 +23,6 @@
             margin: 0;
             min-height: 100vh;
         }
-        /* HEADER STYLES */
         .navbar {
             position: fixed;
             top: 0;
@@ -95,7 +94,6 @@
             box-shadow: 0 8px 25px rgba(196, 30, 58, 0.4);
             background: linear-gradient(135deg, #d63456, var(--primary-burgundy));
         }
-        /* Responsive nav */
         @media (max-width: 900px) {
             .nav-container { padding: 0 1rem; }
         }
@@ -104,7 +102,6 @@
                 display: none;
             }
         }
-        /* PAGE CONTENT */
         .container {
             max-width: 900px;
             margin: 6rem auto 3rem auto;
@@ -134,6 +131,11 @@
             font-size: 0.9rem;
             color: var(--text-light);
             margin-top: 1rem;
+        }
+        .citation a {
+            color: var(--vibrant-magenta);
+            text-decoration: underline;
+            word-break: break-all;
         }
         .beetroot-character {
             text-align: center;
@@ -180,7 +182,14 @@
                 <li>▶️ Natural nitrates that improve blood flow and exercise performance</li>
                 <li>▶️ 300% more antioxidants than most fruits</li>
             </ul>
-            <div class="citation">Sources: Peer-reviewed studies, BBC Good Food 2024</div>
+            <div class="citation">
+                Sources:
+                <a href="https://doi.org/10.1007/s40279-014-0149-y" target="_blank">[1] Jones 2014</a>,
+                <a href="https://doi.org/10.1016/j.fochx.2023.100789" target="_blank">[2] Mohsen et al. 2024</a>,
+                <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4425174/" target="_blank">[3] Clifford et al. 2015</a>,
+                <a href="https://www.slideshare.net/slideshow/a-comprehensive-review-on-nutraceutical-potential-clinical-studies-and-application-of-beetroot-as-a-source-of-bioactive-compound/272995294" target="_blank">[4] S.V. Ghodke et al. 2024</a>,
+                <a href="https://www.bbcgoodfood.com/health/nutrition/ingredient-focus-beetroot" target="_blank">[5] BBC Good Food 2024</a>
+            </div>
         </div>
 
         <div class="benefit-card">
@@ -196,7 +205,10 @@
                     <p>✅ 15-20g protein<br>✅ 100% natural ingredients<br>✅ Low glycemic index</p>
                 </div>
             </div>
-            <div class="citation">Source: Grand View Research 2024</div>
+            <div class="citation">
+                Source:
+                <a href="https://www.grandviewresearch.com/industry-analysis/plant-based-yogurt-market-report" target="_blank">[6] Grand View Research 2024</a>
+            </div>
         </div>
 
         <div class="benefit-card">
