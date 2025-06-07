@@ -23,16 +23,88 @@
             margin: 0;
             min-height: 100vh;
         }
+        /* HEADER STYLES */
         .navbar {
-            position: sticky;
+            position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.97);
             backdrop-filter: blur(10px);
-            padding: 1rem 0;
+            z-index: 1000;
+            padding: 1.1rem 0;
             box-shadow: 0 2px 10px rgba(139, 21, 56, 0.05);
-            z-index: 100;
         }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-burgundy);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 1.08rem;
+            transition: color 0.3s;
+            padding: 0.4em 0.8em;
+            border-radius: 6px;
+        }
+        .nav-link.active,
+        .nav-link[aria-current="page"] {
+            color: var(--vibrant-magenta);
+            font-weight: 700;
+            background: var(--soft-rose);
+            text-decoration: underline;
+        }
+        .nav-link:hover {
+            color: var(--vibrant-magenta);
+            background: var(--earthy-cream);
+        }
+        .cta-button {
+            background: linear-gradient(135deg, var(--vibrant-magenta), var(--primary-burgundy));
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(196, 30, 58, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(196, 30, 58, 0.4);
+            background: linear-gradient(135deg, #d63456, var(--primary-burgundy));
+        }
+        /* Responsive nav */
+        @media (max-width: 900px) {
+            .nav-container { padding: 0 1rem; }
+        }
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+        }
+        /* PAGE CONTENT */
         .container {
             max-width: 900px;
             margin: 6rem auto 3rem auto;
@@ -43,6 +115,8 @@
             text-align: center;
             font-size: 2.6rem;
             margin-bottom: 2rem;
+            font-weight: 700;
+            letter-spacing: 1px;
         }
         .benefit-card {
             background: var(--pure-white);
@@ -74,6 +148,11 @@
             from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
+        @media (max-width: 600px) {
+            .container { padding: 1.5rem 0.4rem; }
+            h1 { font-size: 2rem; }
+            .benefit-card { padding: 1.2rem 0.7rem; }
+        }
     </style>
 </head>
 <body>
@@ -83,9 +162,10 @@
             <a href="index.html" class="logo">BeetBOOST</a>
             <ul class="nav-menu">
                 <li><a href="index.html#home" class="nav-link">Home</a></li>
-                <li><a href="why.html" class="nav-link" style="color:var(--vibrant-magenta);font-weight:700;">Why Beetroot?</a></li>
+                <li><a href="why.html" class="nav-link active" aria-current="page">Why Beetroot?</a></li>
                 <li><a href="order.html" class="nav-link">Order</a></li>
             </ul>
+            <a href="order.html" class="cta-button">Order Now</a>
         </div>
     </nav>
 
@@ -94,18 +174,18 @@
         
         <div class="benefit-card">
             <h2>Nutritional Powerhouse</h2>
-            <p>Beetroot is rich in <strong>betalains</strong>, unique antioxidants with anti-inflammatory properties shown to support heart health and detoxification<sup>[1][2]</sup>. A single serving provides:</p>
+            <p>Beetroot is rich in <strong>betalains</strong>, unique antioxidants with anti-inflammatory properties shown to support heart health and detoxification. A single serving provides:</p>
             <ul>
                 <li>▶️ 15-20g plant-based protein (meets FSANZ high-protein claims)</li>
-                <li>▶️ Natural nitrates that improve blood flow and exercise performance<sup>[3][4]</sup></li>
-                <li>▶️ 300% more antioxidants than most fruits<sup>[5]</sup></li>
+                <li>▶️ Natural nitrates that improve blood flow and exercise performance</li>
+                <li>▶️ 300% more antioxidants than most fruits</li>
             </ul>
-            <div class="citation">Sources: [1] Jones 2014, [2] Mohsen et al. 2024, [3] Zielińska‐Przyjemska et al. 2009, [4] Wootton-Beard et al. 2015, [5] BBC Good Food 2024</div>
+            <div class="citation">Sources: Peer-reviewed studies, BBC Good Food 2024</div>
         </div>
 
         <div class="benefit-card">
             <h2>Filling a Market Gap</h2>
-            <p>While plant-based yogurts grow at 13.9% CAGR<sup>[6]</sup>, most lack protein (1-5g/serve). BeetBOOST delivers:</p>
+            <p>While plant-based yogurts grow at 13.9% CAGR, most lack protein (1-5g/serve). BeetBOOST delivers:</p>
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1rem 0;">
                 <div style="background:var(--earthy-cream);padding:1rem;border-radius:10px;">
                     <h3 style="color:var(--primary-burgundy);margin:0;">Competitors</h3>
@@ -116,12 +196,12 @@
                     <p>✅ 15-20g protein<br>✅ 100% natural ingredients<br>✅ Low glycemic index</p>
                 </div>
             </div>
-            <div class="citation">Source: [6] Grand View Research 2024</div>
+            <div class="citation">Source: Grand View Research 2024</div>
         </div>
 
         <div class="benefit-card">
             <h2>Sustainable Innovation</h2>
-            <p>We use <strong>WA-grown organic beetroots</strong> requiring 70% less water than dairy farming<sup>[7]</sup>. Our packaging is 100% recyclable, reducing plastic waste by 40% compared to competitors.</p>
+            <p>We use <strong>WA-grown organic beetroots</strong> requiring 70% less water than dairy farming. Our packaging is 100% recyclable, reducing plastic waste by 40% compared to competitors.</p>
             <div class="beetroot-character">
                 <!-- SVG: Cute Beetroot Character -->
                 <svg viewBox="0 0 140 170" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:120px;height:150px;">
