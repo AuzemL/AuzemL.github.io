@@ -18,7 +18,25 @@
             --text-dark: #2C2C2C;
             --text-light: #666666;
         }
-
+        /* --- Nutrition Section Background --- */
+        .nutrition-section {
+            background: <img src="Background.jpg"> center center/cover no-repeat;
+            position: relative;
+            padding: 4rem 0;
+        }
+        .nutrition-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(255,255,255,0.85);
+            pointer-events: none;
+            z-index: 0;
+        }
+        .nutrition-section > .nutrition-table-container,
+        .nutrition-section > .nutrition-table-container * {
+            position: relative;
+            z-index: 1;
+        }
         body {
             font-family: 'Poppins', sans-serif;
             line-height: 1.6;
@@ -519,7 +537,7 @@
             position: absolute;
             inset: 0;
             z-index: 0;
-            background: url('https://pplx-res.cloudinary.com/image/private/user_uploads/40364014/3593c0ac-01e3-43a2-8aec-cca1018c5c15/Perth.jpg') center center/cover no-repeat;
+            background: <img src="Perth.jpg"> center center/cover no-repeat;
             opacity: 0.45;
             filter: brightness(0.7) blur(1px);
         }
