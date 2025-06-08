@@ -346,10 +346,26 @@
             background: linear-gradient(135deg, var(--soft-rose), var(--primary-burgundy));
         }
 
-        /* Fixed Nutrition Section Layout */
+        /* Fixed Nutrition Section with Background Image */
         .nutrition-section {
-            background: var(--soft-rose);
+            background-image: url('Background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
             padding: 4rem 0;
+        }
+        
+        .nutrition-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: url('Background.jpg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.4;
+            z-index: 0;
+            pointer-events: none;
         }
         
         .nutrition-table-container {
@@ -360,6 +376,7 @@
             box-shadow: 0 6px 24px rgba(139, 21, 56, 0.08);
             padding: 2rem;
             position: relative;
+            z-index: 1;
         }
         
         .nutrition-header-flex {
@@ -427,18 +444,20 @@
             }
         }
 
+        /* Benefits Section with Gradient Background */
         .benefits-section {
-            padding: 6rem 0;
             background: linear-gradient(135deg, var(--soft-rose) 0%, var(--earthy-cream) 100%);
+            position: relative;
+            padding: 6rem 0;
         }
-
+        
         .benefits-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
-
+        
         .benefit-item {
             background: var(--pure-white);
             padding: 2rem;
@@ -508,6 +527,7 @@
             text-align: center;
         }
 
+        /* Footer with Perth Background */
         .footer {
             position: relative;
             overflow: hidden;
@@ -519,7 +539,10 @@
             position: absolute;
             inset: 0;
             z-index: 0;
-            background: url('https://pplx-res.cloudinary.com/image/private/user_uploads/40364014/3593c0ac-01e3-43a2-8aec-cca1018c5c15/Perth.jpg') center center/cover no-repeat;
+            background-image: url('Perth.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             opacity: 0.45;
             filter: brightness(0.7) blur(1px);
         }
@@ -641,7 +664,7 @@
                 <li><a href="Review.html" class="nav-link">Reviews</a></li>
                 <li><a href="vision.html" class="nav-link">Our Vision</a></li>
                 <li><a href="why.html" class="nav-link">Why Beetroot ?</a></li>
-                   </ul>
+            </ul>
             <a href="order.html" class="cta-button">Order Now</a>
         </div>
     </nav>
@@ -801,7 +824,7 @@
                 </tr>
             </table>
             <div class="nutrition-footnote">
-                <strong>Ingredients:</strong> Coconut yoghurt (76.7%) [Water, organic coconut cream, tapioca starch, cane sugar, live cultures (L.casei, L.acidophilus, L.bulgaricus, S.thermophilus, Bifidobacterium)], Beetroot (6.9%), Beetroot powder (2.7%), Tapioca starch (2.7%), Vitamin B1.<br>
+                <strong>Ingredients:</strong> Coconut yoghurt (76.7%) [Water, organic coconut cream, tapioca starch, cane sugar, live cultures (L.casei, L.acidophilus, L.bulgaricus, S.thermophilus, Bifidobacterium)],Soy Protein powder, Beetroot (6.9%), Beetroot powder (2.7%), Tapioca starch (2.7%), Vitamin B1.<br>
                 <strong>Allergens:</strong> Contains soy. May contain tree nuts (coconut).<br>
                 <strong>Storage:</strong> Keep refrigerated at 4°C or below. Consume within 5 days after opening.<br>
                 <strong>Made in Australia</strong> from local and imported ingredients.
@@ -1008,8 +1031,8 @@
             }, 4000);
         }
 
-        // Show social proof every 15 seconds
-        setInterval(showSocialProof, 15000);
+        // Show social proof every 30 seconds
+        setInterval(showSocialProof, 30000);
         
         // Show first notification after 3 seconds
         setTimeout(showSocialProof, 3000);
